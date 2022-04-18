@@ -20,6 +20,14 @@ export function getNewGoods(limit = 4) {
   return request("/home/new", 'get', {limit});
 }
 
+/**
+ * 获取热门品牌
+ * @param limit
+ * @returns {*}
+ */
+export function getBrands(limit = 10) {
+  return request("/home/brand",'get', { limit });
+}
 
 /**
  * 获取人气推荐
@@ -33,7 +41,7 @@ export function getHomeHot() {
  * @returns {*}
  */
 export function getProducts() {
-  return request.get("/home/goods");
+  return request("/home/goods",'get');
 }
 
 /**
@@ -42,5 +50,5 @@ export function getProducts() {
  * @returns {*}
  */
 export function getSpecial(limit) {
-  return request.get("/home/special", {limit});
+  return request("/home/special",'get', {limit});
 }

@@ -3,13 +3,16 @@ export const routes = [
         path: '/',
         name: 'home',
         component: () => import('@/pages/home/HomePage.vue'),
-        // children: [
-        //     {
-        //         path: '/',
-        //         name: 'home',
-        //         component: () => import('@/pages/home/HomePage.vue'),
-        //     }
-        // ]
+        children: [
+            {
+                path: '/',
+                component: () => import('@/pages/category/SubCategoryPage'),
+            }
+        ]
+    },
+    {
+        path: '/category/sub/:id',
+        component: () => import('@/pages/category/SubCategoryPage'),
     },
     {
         path: '/login',
